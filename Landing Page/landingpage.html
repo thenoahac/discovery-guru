@@ -11,12 +11,11 @@
 </head>
 <body>
     <!-- ALIGN HOME button top left -->
-    <button class="home" style="background-color:#f5f5f5; position: absolute; top:0; right:0; z-index: 1;"><a href="#">></a></button>
-    <div class="hero-image" style="text-align:center; background-image:url(./Assets/images/thegorge.jpg)">
+    <div class="hero-image" style="text-align:center; background-image:url(./Assets/images/thegorge.jpg);background-repeat: no-repeat; background-size: cover;">
         <div class="hero-text">
           <h1 style="color:whitesmoke; line-height: 300px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">BEST PROJECT TITLE</h1>
           <p style="text-align:center;color:whitesmoke">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
-          
+            <button class="home" style="line-height: 35px;"><a href="#">HOME</a></button>
     </div>
 </div>
 
@@ -32,6 +31,7 @@
 
     <!-- dropdowns for filter -->
 <!-- Dropdown Trigger -->
+<section class="filters" style="display:flex; justify-content:space-evenly; margin-top: 50px;">
 <a class='dropdown-trigger btn' href='#' data-target='dropdown'>Filter Price!</a>
 
 <!-- Dropdown Structure -->
@@ -41,7 +41,24 @@
   <li><a href="#!">Can you really put a price on experiences?</a></li>
 </ul>
 
+<a class='dropdown-trigger btn' href='#' data-target='dropdown-genre'>Filter Genre!</a>
+<!-- Dropdown Structure -->
+<ul id='dropdown-genre' class='dropdown-content'>
+  <li><a href="#!">Rock n' Roll</a></li>
+  <li><a href="#!">Hip-Hop</a></li> 
+  <li><a href="#!">Kpop</a></li>
+  <li><a href="#!">More Genres</a></li>
+</ul>
 
+<a class='dropdown-trigger btn' href='#' data-target='dropdown-other'>Filter Other Stuff!</a>
+<!-- Dropdown Structure -->
+<ul id='dropdown-other' class='dropdown-content'>
+  <li><a href="#!">Chair Count</a></li>
+  <li><a href="#!">Available Food</a></li> 
+  <li><a href="#!">If Chris Le will be there</a></li>
+</ul>
+
+</section>
 
 
 

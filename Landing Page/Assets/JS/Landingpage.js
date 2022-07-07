@@ -4,3 +4,5 @@
 // });
 
 $('.dropdown-trigger').dropdown()
+$('.dropdown-genre').dropdown()
+$('.dropdown-other').dropdown()
