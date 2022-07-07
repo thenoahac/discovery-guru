@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best and most amzing website</title>
+    <link rel="stylesheet" href="./Assets/CSS/landingpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <title>Best and most amazing website</title>
 </head>
 <body>
-    <WEBSITE AND AMAZING NAME HERE</h1>
+    <!-- ALIGN HOME button top left -->
+    <button class="home" style="background-color:#f5f5f5; position: absolute; top:0; right:0; z-index: 1;"><a href="#">></a></button>
+    <div class="hero-image" style="text-align:center; background-image:url(./Assets/images/thegorge.jpg)">
+        <div class="hero-text">
+          <h1 style="color:whitesmoke; line-height: 300px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">BEST PROJECT TITLE</h1>
+          <p style="text-align:center;color:whitesmoke">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
+          
+    </div>
+</div>
 
-    <section>
-        <p>"BEST SLOGAN EVER"</p>
-    </section>
+<br>
+        <!-- 2 search bars with user input: date range and location/city/zip code -->
+    <form>
+        <section class="search" style= "display: inline-flex; flex-direction: row; width: 100%; align-items: center; font-weight: bolder; font-size: 20px;">
+        When:<input class="first-search"type="date-range" id="date-range" style="display:flex" placeholder="date-range">
+        Where:<input class="first-search"type="text"id="location"style="display:flex; margin-left: 30px" placeholder="location/city/zip code">
+        <button style="display:inline-flex";>Search</button>  
+        </section>
+    </form>
+
+    <!-- dropdowns for filter -->
+<!-- Dropdown Trigger -->
+<a class='dropdown-trigger btn' href='#' data-target='dropdown'>Filter Price!</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown' class='dropdown-content'>
+  <li><a href="#!">Free-$100</a></li>
+  <li><a href="#!">$101-$300</a></li> 
+  <li><a href="#!">Can you really put a price on experiences?</a></li>
+</ul>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./Assets/JS/Landingpage.js"></script>
 </body>
 </html>
