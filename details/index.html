@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    <header>
+        <button href=# id="homeBtn">Take me home!</button>
+        <h1 id="artist-name">Artist Name</h1>
+    </header>
+
+    <div class="flex-container">
+        <div class="flex-child" id="map">
+            <h3>Location</h3>
+            <h5>Where can I find them?</h5>
+            Google Maps data will go here.
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-child" id="wikipedia-youtube">
+            <div class="row">
+                <h4>Read all about them!</h4>
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://images.squarespace-cdn.com/content/v1/5a4fb547b0786969790f230b/1516399639303-CVW76S1KDPBKPGPV9DC0/Wikipedia+Banner">
+                      <span class="card-title"></span>
+                    </div>
+                    <div class="card-content">
+                      <div id="article"> Wikipedia API will fill in blurb here, also the box will expand with the added text.</div>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">Read more! (this will link to wikipedia directly)</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex-child" id="youtube">
+            <div class="col s12 m7">
+                <div class="card">
+                    <h4>Hear their hits!</h4>
+                    <div class="card-image">
+                        <span class="card-title"></span>
+                    </div>
+                    <div class="card-content">
+                        <iframe width="620" height="445" src="https://www.youtube.com/embed/o2iEGq9pUz8?autoplay=1&mute=1">
+                        </iframe>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Watch More! (this will link to a youtube playlist generated from their search inquiry)</a>
+                    </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
