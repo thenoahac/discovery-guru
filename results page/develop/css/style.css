@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #264653;
+  }
+
+.nav-list {
+    display: flex;
+    flex: wrap;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+.search-bar {
+    text-align: center;
+}
+
+.event-container {
+    display: flex;
+    flex: wrap;
+    justify-content: space-around;
+
+}
+
+.artist-options {
+    display: flex;
+    flex-direction: column;
+    color: #2A9D8F;
+    font-size: 48px;
+    padding: 5px;
+    flex: 0 0 5em;
+}
+
+#area-map {
+    float: right;
+}
