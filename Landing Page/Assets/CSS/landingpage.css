@@ -1,3 +1,14 @@
 .home {
-    add position:absolute; top:0; right:0
+    position:absolute; top:0; left:0
+}
+
+body{
+    background-color: #264653;
+}
+
+.show {
+    display: block;
+}
+.hide{
+    display: none;
 }
