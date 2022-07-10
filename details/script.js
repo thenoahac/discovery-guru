@@ -1,22 +1,29 @@
-var youtubeAPI = "AIzaSyAFnrBNHFeBWokWW5bxI2y_NXPRhqAcSlo"
-var wikipediaAPI = ""
+// ** youtube api section **
+var searchTerm = "pj harvey";
+    //^ this will change depending on user input
+var youtubeAPIKey = "AIzaSyDzcsnOAwEH0QA9xZbp9HCRQRPK323Ircw";
 
-// $(document).ready(function(){
- 
-//     $.ajax({
-//         type: "GET",
-//         url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Capitol_Hill_Block_Party&callback=?",
-//         contentType: "application/json; charset=utf-8",
-//         async: false,
-//         dataType: "json",
-//         success: function (data, textStatus, jqXHR) {
- 
-//             var markup = data.parse.text["*"];
-//             var blurb = $('<div></div>').html(markup);
-//             $('#article').html($(blurb).find('p'));
- 
-//         },
-//         error: function (errorMessage) {
-//         }
-//     });
-// });
+fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${searchTerm}&key=${youtubeAPIKey}`)
+.then((result)=>{
+    // console.log(result.json())
+    // ^ if there is an issue uncomment this portion
+    return result.json()
+}).then((data)=>{
+    console.log(data)
+    let videos = data.items
+    let videoContainer = document.querySelector(".youtube-container")
+    for(video of videos){
+        // console.log(video.snippet.title)
+        // ^ if there is an issue uncomment this portion
+        videoContainer.innerHTML += `<iframe width="520" height="345" src="https://www.youtube.com/embed/${data.items[0].etag}" frameboarder="0" allow="autoplay;encrypted-media" alllowfullscreen></iframe>
+        <p>${video.snippet.title}<p>`
+
+    }
+})
+
+// ** youtube playlist link section **
+var youtubePlaylist = document.getElementById("watch-more");
+var aTag = document.createElement('a');
+    aTag.setAttribute('href',`https://www.youtube.com/results?search_query=${searchTerm}`);
+    aTag.innerText = "Watch More!";
+    youtubePlaylist.appendChild(aTag);
