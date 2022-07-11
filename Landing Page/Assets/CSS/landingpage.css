@@ -6,9 +6,30 @@ body{
     background-color: #264653;
 }
 
-.show {
+/* .show {
     display: block;
 }
 .hide{
     display: none;
+} */
+
+.footer{
+    display: block;
+    list-style-type: none;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #2A9D8F;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    background-color:;
+    color: whitesmoke;
+  /* whatever font */
 }
