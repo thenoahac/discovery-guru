@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body onload="initialize()">
+<!-- LANDING PAGE -->
+<!-- Nav Bar -->
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">HOME</a>
+</nav>
+<!-- ALIGN HOME button top left -->
+<div class="hero-image" style="text-align:center; background-image:url(./Assets/thegorge.jpg);background-repeat: no-repeat; background-size: cover;">
+    <div class="hero-text">
+        <h1 style="color:whitesmoke; line-height: 300px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">BEST PROJECT TITLE</h1>
+        <p style="text-align:center;color:whitesmoke">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
+    </div>
+</div>
+    
+<div class = "container row"> 
+
+    <form class="col s6">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="startDate" type="text" class="validate">
+          <label for="startDate">Start Date</label>
+          <span class="helper-text">YYYY-MM-DD</span>
+        </div>
+      </div>
+    </form>
+
+    <form class="col s6">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="endDate" type="text" class="validate">
+            <label for="endDate">End Date</label>
+            <span class="helper-text">YYYY-MM-DD</span>
+          </div>
+        </div>
+      </form>
+    
+    <div class="col s6">
+        <div class="input-field">
+            <input id="address" type="textbox" value="City">
+            <input type="button" value="Search" onclick="codeAddress()">
+        </div>
+    </div>
+</div>
+
+<!-- RESULT PAGE -->
+
+<div id="map"></div>
+<div id="events"></div>
+
+<script src="script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVeiXPohR3WJKh94VpZEIbNr4wjAqPfoQ&callback=initMap"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
