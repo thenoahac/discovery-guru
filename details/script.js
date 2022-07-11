@@ -20,10 +20,34 @@ fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=
 
     }
 })
-
 // ** youtube playlist link section **
 var youtubePlaylist = document.getElementById("watch-more");
 var aTag = document.createElement('a');
     aTag.setAttribute('href',`https://www.youtube.com/results?search_query=${searchTerm}`);
     aTag.innerText = "Watch More!";
     youtubePlaylist.appendChild(aTag);
+    
+
+// ** wikipedia api section **
+// fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=&prop=revisions&rvprop=content&format=json&formatversion=2&origin=*`)
+fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`)
+.then((result)=>{
+    console.log(result)
+    return result.json()
+}).then((data)=>{
+    console.log(data)
+    let article = data.items
+    let articleContainer = document.querySelector(".card-content")
+    for (article of articles){
+        articleContainer.innerHTML += `<p>${article.extract}</p>`
+    }
+  
+})
+
+
+// ** wikipedia article link section **
+var wikiArticle = document.getElementById("read-more");
+var aTag = document.createElement('a');
+    aTag.setAttribute('href',`https://en.wikipedia.org/wiki/${searchTerm}`);
+    aTag.innerText = "Read More!";
+    wikiArticle.appendChild(aTag);
