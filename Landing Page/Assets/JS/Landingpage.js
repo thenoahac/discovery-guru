@@ -9,20 +9,21 @@ $('.dropdown-other').dropdown()
 btn.addEventListener("click",function(event){
     // take in values of inputs and store as variable
     var userInput = dateInput + locationInput
-    //fetch data 
-    fetch()
+    // fetch()
     //append to page  
     event.preventDefault(event);
 
     function getInputFromTextBox() {
     var dateInput = document.getElementById("#date-range").value;
-    console.log(dateinput)
+    console.log(dateInput)
     }
 
     function getInputFromTextBox() {
     var locationInput = document.getElementById("#location").value;
     alert(input);
     }  })
+
+
     // if (homePage.style.display !== "none"){
     //     homePage.style.display="none";
     // } else {

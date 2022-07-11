@@ -12,20 +12,23 @@
 </head>
 
 <body>
+<!-- rename class and ID as -->
   <div class="show" id="main-content">
+   
     <div class="hero-image"
-      style="text-align:center; background-image:url(./Assets/images/thegorge.jpg);background-repeat: no-repeat; background-size: cover;">
+      style="text-align:center; margin-top:-42px; background-image:url(./Assets/images/thegorge.jpg);background-repeat: no-repeat; background-size: cover;">
+      
       <div class="hero-text">
-        <h1
-          style="color:whitesmoke; line-height: 300px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-          BEST PROJECT TITLE</h1>
-
-        <p style="text-align:center;color:whitesmoke">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
-
+        
+        <h1 style="color:white; line-height: 300px; font-family: Cambria;">BEST PROJECT TITLE</h1>
+        
         <input type="button" value="HOME" onClick="window.location.reload(true)"
-          style="line-height:50px; position: fixed; top:0; left:0"></button>
-
+        style="border-style:solid; border-color:white; height:100px; width: 100px; font-size: 30px; position: fixed; top:0; left:0; border-style: none; font-family: Cambria; color: white; background-color: transparent ;"></button>
+        
+        <p style="text-align:center;color:white">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
+<!-- value home??? -->
       </div>
+
     </div>
 
     <br>
@@ -34,8 +37,8 @@
       <section class="search"
         style="display: inline-flex; flex-direction: row; width: 100%; align-items: center; font-weight: bolder; font-size: 20px; color: whitesmoke">
 
-        When:<input class="first-search" type="text" id="date-range"
-          style="margin-left:15px; display:flex; color: whitesmoke" ; placeholder="   Date Range" ; margin-left="15px">
+        When:<input class="first-search" type="date" id="date-range"
+          style="margin-left:15px; display:flex; flex-flow: row-reverse; width: 400px; color-scheme: dark";>
 
         Where:<input class="first-search" type="text" id="location"
           style="margin-left: 15px; display:flex; color:whitesmoke" placeholder="   location/city/zip code">
@@ -60,7 +63,7 @@
       <a class='dropdown-trigger btn' href='#' data-target='dropdown-genre'>Filter Genre!</a>
       <!-- Dropdown Structure -->
       <ul id='dropdown-genre' class='dropdown-content'>
-        <li><a href="#!">Rock n' Roll</a></li>
+        <li><a href="#!">Rock</a></li>
         <li><a href="#!">Hip-Hop</a></li>
         <li><a href="#!">Kpop</a></li>
         <li><a href="#!">More Genres</a></li>
@@ -69,14 +72,26 @@
       <a class='dropdown-trigger btn' href='#' data-target='dropdown-other'>Filter Other Stuff!</a>
       <!-- Dropdown Structure -->
       <ul id='dropdown-other' class='dropdown-content'>
-        <li><a href="#!">Chair Count</a></li>
-        <li><a href="#!">Available Food</a></li>
-        <li><a href="#!">If Chris Le will be there</a></li>
+        <li><a href="#!">21+</a></li>
+        <li><a href="#!">Food Available</a></li>
+        <li><a href="#!">Pets Allowed</a></li>
       </ul>
 
     </section>
 
     </section>
+    
+    <footer style="display:inline-flex; width: 100%; position: fixed; bottom: 0;">
+    <nav>
+      <ul class="navbar" style="justify-content: space-evenly; ;">
+        <li class="footer"><a href="#">Facebook</a></li>
+        <li class="footer"><a href="#">Instagram</a></li>
+        <li class="footer"><a href="#">Shop Products!</a></li>
+        <li class="footer"><a href="#">Buy Tickets</a></li>
+        <li class="footer"><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
