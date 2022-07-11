@@ -27,7 +27,7 @@ var aTag = document.createElement('a');
     aTag.innerText = "Watch More!";
     youtubePlaylist.appendChild(aTag);
     
-
+    
 // ** wikipedia api section **
 // fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=&prop=revisions&rvprop=content&format=json&formatversion=2&origin=*`)
 fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`)
@@ -35,14 +35,12 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`)
     console.log(result)
     return result.json()
 }).then((data)=>{
-    console.log(data)
-    let article = data.items
+    for (extract of data.extract)
+    console.log(data.extract)
     let articleContainer = document.querySelector(".card-content")
-    for (article of articles){
-        articleContainer.innerHTML += `<p>${article.extract}</p>`
-    }
+        articleContainer.innerHTML += `<p>${data.extract}</p>`
+    })
   
-})
 
 
 // ** wikipedia article link section **
