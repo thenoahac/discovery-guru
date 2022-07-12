@@ -56,10 +56,6 @@ nav{
   color: white;
 }
 
-.img {
-  width:100%;
-  max-width: 500px;
-}
 
 #searchBtn{
   color: white ;
@@ -70,6 +66,75 @@ nav{
 }
 
 #map {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
+}
+
+.flex-container {
+  display: flex;
+  margin: 50px;
+  border-radius: 12px;
+  flex-direction: row;
+}
+
+.flex-child {
+  flex: 1;
+}  
+/* Event Detail Cards */
+.card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+  display: none;
+}
+
+.date {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  color: #2A9D8F;
+}
+
+.event-image {
+  border-radius: 10px;
+  border: 3px white; 
+}
+.event-name {
+  font-size:2rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.event-name::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 2em;
+  background-color: black;
+  margin: 0.8em auto 0.5em;
+}
+
+.info {
+  margin: 0;
+  letter-spacing: 1.5px;
+  color: darkgray;
+}
+
+.location {
+  font-size: 20px;
+  color: darkgray;
+  text-align: center;
+} 
+
+.eventImage img {
+  max-width: 150px;
+  max-height: 150px;
 }
