@@ -1,6 +1,8 @@
 var geocoder;
 var map;
-const cardClass = document.getElementsByClassName("card");
+//var searchTerm = json._embedded.events[0]._embedded.attractions[0].name;
+var youtubeAPIKey = "AIzaSyDzcsnOAwEH0QA9xZbp9HCRQRPK323Ircw";
+const flexChild = document.getElementsByClassName("flex-child");
 const city = localStorage.getItem('address');
 const startDate = localStorage.getItem('startDate');
 const endDate = localStorage.getItem('endDate');
@@ -12,8 +14,9 @@ function initialize() {
 
 function showContent() {
   document.getElementById("cardMap").style.display ="block";
-  for (let i = 0; i < cardClass.length; i++) {
-    cardClass[i].style.display = "block";
+  document.getElementById("card").style.display ="block"
+  for (let i = 0; i < flexChild.length; i++) {
+    flexChild[i].style.display = "block";
   }
 }
 
@@ -42,6 +45,7 @@ function codeAddress() {
         dataType: "json",
         success: function(json) {
                     console.log(json);
+                    console.log(json._embedded.events[0]._embedded.attractions[0].name)
                     //var e = document.getElementById("events");
                     //e.innerHTML = json.page.totalElements + " events found.";
                     showEvents(json);
@@ -71,18 +75,6 @@ function showEvents(json) {
     $("#eventLocation1").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[0]._embedded.venues[0].name+"</p>");
     $("#eventImage1").append("<img src='" + json._embedded.events[0].images[0].url + "'>");
   }
-  for(var i=0; i<1; i++) {
-    $("#eventName2").append("<h2 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[1].name+"</h4>");
-    $("#eventDate2").append("<h3 class='center-align' style='color:#F4A261;'>"+json._embedded.events[1].dates.start.localDate+"</p>");
-    $("#eventLocation2").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[1]._embedded.venues[0].name+"</p>");
-    $("#eventImage2").append("<img src='" + json._embedded.events[1].images[0].url + "'>");
-  }
-  for(var i=0; i<1; i++) {
-    $("#eventName3").append("<h2 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[2].name+"</h4>");
-    $("#eventDate3").append("<h3 class='center-align' style='color:#F4A261;'>"+json._embedded.events[2].dates.start.localDate+"</p>");
-    $("#eventLocation3").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[2]._embedded.venues[0].name+"</p>");
-    $("#eventImage3").append("<img src='" + json._embedded.events[2].images[0].url + "'>");
-  }
 }
 
 
@@ -92,7 +84,7 @@ function initMap(results, json) {
     center: {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()},
     zoom: 10
   });
-  for(var i=0; i<3; i++) {
+  for(var i=0; i<1; i++) {
     addMarker(map, json._embedded.events[i]);
   }
 }
