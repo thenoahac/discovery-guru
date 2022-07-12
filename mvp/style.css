@@ -1,4 +1,75 @@
+body{
+  background-color: #2A9D8F;
+  font-family: 'Roboto', sans-serif;;
+
+}
+
+nav{
+  background-color: #264653;
+}
+
+.hero-image {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("Assets/thegorge.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.hero-text{
+ color: white;
+ text-align: center;
+
+}
+.date{
+  color: white;
+}
+/* label color */
+.input-field label {
+  color: white;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: white;
+}
+.input-field input[type=date]:focus + label {
+  color: white;
+}
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+ /* label underline focus color */
+ .input-field input[type=date]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+  color: white;
+}
+
+.img {
+  width:100%;
+  max-width: 500px;
+}
+
+#searchBtn{
+  color: white ;
+}
+
+.input-field {
+  color: white;
+}
+
 #map {
-    width: 500px;
-    height: 500px;
-  }
+  width: 500px;
+  height: 500px;
+}
