@@ -1,5 +1,5 @@
 // ** youtube api section **
-var searchTerm = "tori amos";
+var searchTerm = "pj harvey";
     //^ this will change depending on user input
 var youtubeAPIKey = "AIzaSyDzcsnOAwEH0QA9xZbp9HCRQRPK323Ircw";
 
@@ -13,10 +13,11 @@ fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=
     let videos = data.items
     let videoContainer = document.querySelector(".youtube-container")
     for(video of videos){
-        // console.log(video.snippet.title)
+        console.log(video)
         // ^ if there is an issue uncomment this portion
-        videoContainer.innerHTML += `<iframe width="520" height="345" src="https://www.youtube.com/embed/${data.items[0].etag}" frameboarder="0" allow="autoplay;encrypted-media" alllowfullscreen></iframe>
-        <p>${video.snippet.title}<p>`
+        videoContainer.innerHTML += `<p>${video.snippet.title}<p>
+        <a href="https://www.youtube.com/embed/${video.id.videoId}">Watch here!</a>`
+        // ^ changed to display links
 
     }
 })
