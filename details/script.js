@@ -17,6 +17,7 @@ fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=
         // ^ if there is an issue uncomment this portion
         videoContainer.innerHTML += `<p>${video.snippet.title}<p>
         <a href="https://www.youtube.com/embed/${video.id.videoId}">Watch here!</a>`
+        // ^ changed to display links
 
     }
 })
