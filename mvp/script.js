@@ -1,5 +1,6 @@
 var geocoder;
 var map;
+const cardClass = document.getElementsByClassName("card");
 const city = localStorage.getItem('address');
 const startDate = localStorage.getItem('startDate');
 const endDate = localStorage.getItem('endDate');
@@ -7,6 +8,13 @@ const endDate = localStorage.getItem('endDate');
 function initialize() {
   geocoder = new google.maps.Geocoder();
 
+}
+
+function showContent() {
+  document.getElementById("cardMap").style.display ="block";
+  for (let i = 0; i < cardClass.length; i++) {
+    cardClass[i].style.display = "block";
+  }
 }
 
 //onclick
@@ -18,6 +26,7 @@ function codeAddress() {
   localStorage.setItem('startDate', startDate);
   var endDate = document.getElementById('endDate').value;
   localStorage.setItem('endDate', endDate);
+
   geocoder.geocode( { 'address': address}, function(results, status) {
     console.log(results)
     var latlon = results[0].geometry.location.lat() + "," + results[0].geometry.location.lng()
@@ -33,8 +42,8 @@ function codeAddress() {
         dataType: "json",
         success: function(json) {
                     console.log(json);
-                    var e = document.getElementById("events");
-                    e.innerHTML = json.page.totalElements + " events found.";
+                    //var e = document.getElementById("events");
+                    //e.innerHTML = json.page.totalElements + " events found.";
                     showEvents(json);
                     initMap(results, json);
                  },
@@ -51,13 +60,28 @@ function codeAddress() {
 }
 //$("#eventImg").append("<p>" + json._embedded.events[0].images[0].url + "</p>");
 //i<json.page.size for loop
+//  getElementById("card").style.display ="block";
+//  getElementById("cardMap").style.display ="block";
 
 function showEvents(json) {
+
   for(var i=0; i<1; i++) {
-    $("#events").append("<h4 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[i].name+"</h4>");
-    $("#events").append("<p class='center-align' style='color:#F4A261;'>"+json._embedded.events[i].dates.start.localDate+"</p>");
-    $("#events").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[i]._embedded.venues[0].name+"</p>");
-    $("#events").append("<img src='" + json._embedded.events[i].images[0].url + "'>");
+    $("#eventName1").append("<h2 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[0].name+"</h4>");
+    $("#eventDate1").append("<h3 class='center-align' style='color:#F4A261;'>"+json._embedded.events[0].dates.start.localDate+"</p>");
+    $("#eventLocation1").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[0]._embedded.venues[0].name+"</p>");
+    $("#eventImage1").append("<img src='" + json._embedded.events[0].images[0].url + "'>");
+  }
+  for(var i=0; i<1; i++) {
+    $("#eventName2").append("<h2 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[1].name+"</h4>");
+    $("#eventDate2").append("<h3 class='center-align' style='color:#F4A261;'>"+json._embedded.events[1].dates.start.localDate+"</p>");
+    $("#eventLocation2").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[1]._embedded.venues[0].name+"</p>");
+    $("#eventImage2").append("<img src='" + json._embedded.events[1].images[0].url + "'>");
+  }
+  for(var i=0; i<1; i++) {
+    $("#eventName3").append("<h2 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[2].name+"</h4>");
+    $("#eventDate3").append("<h3 class='center-align' style='color:#F4A261;'>"+json._embedded.events[2].dates.start.localDate+"</p>");
+    $("#eventLocation3").append("<p class='center-align' style='color:#E76F51;'>"+json._embedded.events[2]._embedded.venues[0].name+"</p>");
+    $("#eventImage3").append("<img src='" + json._embedded.events[2].images[0].url + "'>");
   }
 }
 
@@ -68,7 +92,7 @@ function initMap(results, json) {
     center: {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()},
     zoom: 10
   });
-  for(var i=0; i<4; i++) {
+  for(var i=0; i<3; i++) {
     addMarker(map, json._embedded.events[i]);
   }
 }
