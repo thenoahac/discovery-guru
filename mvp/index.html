@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Noto+Sans+JP:wght@100&family=Roboto&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body onload="initialize()">
@@ -19,47 +22,53 @@
         <a href="#" class="brand-logo">HOME</a>
 </nav>
 <!-- ALIGN HOME button top left -->
-<div class="hero-image" style="text-align:center; background-image:url(./Assets/thegorge.jpg);background-repeat: no-repeat; background-size: cover;">
+<div class="hero-image">
     <div class="hero-text">
-        <h1 style="color:whitesmoke; line-height: 300px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">BEST PROJECT TITLE</h1>
-        <p style="text-align:center;color:whitesmoke">"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
+        <h1>BEST PROJECT TITLE</h1>
+        <p>"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
     </div>
 </div>
     
 <div class = "container row"> 
 
-    <form class="col s6">
+    <form class="col s4">
       <div class="row">
         <div class="input-field col s12">
-          <input id="startDate" type="text" class="validate">
+          <input id="startDate" type="date">
           <label for="startDate">Start Date</label>
-          <span class="helper-text">YYYY-MM-DD</span>
         </div>
       </div>
     </form>
 
-    <form class="col s6">
+    <form class="col s4">
         <div class="row">
           <div class="input-field col s12">
-            <input id="endDate" type="text" class="validate">
+            <input id="endDate" type="date">
             <label for="endDate">End Date</label>
-            <span class="helper-text">YYYY-MM-DD</span>
           </div>
         </div>
       </form>
     
-    <div class="col s6">
+    <div class="col s4">
         <div class="input-field">
-            <input id="address" type="textbox" value="City">
-            <input type="button" value="Search" onclick="codeAddress()">
+            <input placeholder="Location" id="address" type="text">
+            <label for="address">Address, City, State, or Postal Code</label>
+            
         </div>
+    </div>
+    <div>
+      <input type="button" value="Search" onclick="codeAddress()">
     </div>
 </div>
 
 <!-- RESULT PAGE -->
+<div class = "container row"> 
 
-<div id="map"></div>
-<div id="events"></div>
+  <div class="col s6 push-s4" id="map"></div>
+  <div class="col s12 center-align">
+    <div id="events"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVeiXPohR3WJKh94VpZEIbNr4wjAqPfoQ&callback=initMap"></script>
