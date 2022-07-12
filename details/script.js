@@ -1,9 +1,9 @@
 // ** youtube api section **
-var searchTerm = "pj harvey";
+var searchTerm = "tori amos";
     //^ this will change depending on user input
 var youtubeAPIKey = "AIzaSyDzcsnOAwEH0QA9xZbp9HCRQRPK323Ircw";
 
-fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${searchTerm}&key=${youtubeAPIKey}`)
+fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${searchTerm}&key=${youtubeAPIKey}`,{credentials: 'omit'})
 .then((result)=>{
     // console.log(result.json())
     // ^ if there is an issue uncomment this portion
