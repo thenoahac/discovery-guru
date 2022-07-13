@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Noto+Sans+JP:wght@100&family=Roboto&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body onload="initialize()">
+<!-- LANDING PAGE -->
+<!-- Nav Bar -->
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">HOME</a>
+</nav>
+<!-- ALIGN HOME button top left -->
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>BEST PROJECT TITLE</h1>
+        <p>"IM INSPIRED TO LISTEN TO MUSIC WHEN I READ THIS"</p>
+    </div>
+</div>
+    
+<div class = "container row"> 
+
+    <form class="col s4">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="startDate" type="date">
+          <label for="startDate">Start Date</label>
+        </div>
+      </div>
+    </form>
+
+    <form class="col s4">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="endDate" type="date">
+            <label for="endDate">End Date</label>
+          </div>
+        </div>
+      </form>
+    
+    <div class="col s4">
+        <div class="input-field">
+            <input placeholder="Location" id="address" type="text">
+            <label for="address">Address, City, State, or Postal Code</label>
+            
+        </div>
+    </div>
+    <div>
+      <input type="button" value="Search" onclick="showContent(); codeAddress();">
+    </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div class="flex-container">
+  <div class="flex-child" id="">
+    <div class="row">
+      <div class="col s6 m7">
+
+        <div class="card" id="card">
+          <div class="sidebar">
+              <div class ="eventImage" id="eventImage1"></div>
+              <h3 id="eventDate1" class="date"></h3>
+          </div>
+          <div class="main-content">
+              <h2 id="eventName1" class="event-name"></h2>
+              <p id = "eventLocation1" class="location"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="flex-child" id="">
+    <div class="row">
+      <div class="card col s6 offset-s6 m7 flex-child" id="cardMap" style="display:none;"> 
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <div class="flex-child" id="wikipedia-youtube">
+    <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.squarespace-cdn.com/content/v1/5a4fb547b0786969790f230b/1516399639303-CVW76S1KDPBKPGPV9DC0/Wikipedia+Banner">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content" id="wiki-blurb">
+            </div>
+            <div class="card-action" id="read-more">
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="flex-child" id="youtube">
+    <div class="col s12 m7">
+        <div class="card">
+            <h4>Hear their hits!</h4>
+            <div class="card-image">
+                <span class="card-title"></span>
+            </div>
+            <div class="youtube-container">
+            </div>
+            <div class="card-action" id="watch-more">
+            </div>
+        </div>
+      </div>
+  </div>
+-->
+</div>
+
+
+<script src="script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVeiXPohR3WJKh94VpZEIbNr4wjAqPfoQ&callback=initMap"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

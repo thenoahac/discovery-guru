@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    <header>
+        <button href="#" id="homeBtn">Take me home!</button>
+        <h1 id="artist-name">Artist Name</h1>
+    </header>
+
+    <div class="flex-container">
+        <div class="flex-child" id="map">
+            <h3>Location</h3>
+            <h5>Where can I find them?</h5>
+            Google Maps data will go here.
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-child" id="wikipedia-youtube">
+            <div class="row">
+                <h4>Read all about them!</h4>
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="https://images.squarespace-cdn.com/content/v1/5a4fb547b0786969790f230b/1516399639303-CVW76S1KDPBKPGPV9DC0/Wikipedia+Banner">
+                      <span class="card-title"></span>
+                    </div>
+                    <div class="card-content" id="wiki-blurb">
+                    </div>
+                    <div class="card-action" id="read-more">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex-child" id="youtube">
+            <div class="col s12 m7">
+                <div class="card">
+                    <h4>Hear their hits!</h4>
+                    <div class="card-image">
+                        <span class="card-title"></span>
+                    </div>
+                    <div class="youtube-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9ipCKIxdHTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-action" id="watch-more">
+                    </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+
+<div class="card" id="card">
+  <div class="sidebar">
+      <div id="eventImage"></div>
+      <h3 id="eventDate" class="date"></h3>
+  </div>
+  <div class="main-content">
+      <h2 id="eventName" class="event-name"></h2>
+      <p id = "eventLocation" class="location"></p>
+  </div>
+</div>
+</div>

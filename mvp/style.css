@@ -1,0 +1,140 @@
+body{
+  background-color: #2A9D8F;
+  font-family: 'Roboto', sans-serif;;
+
+}
+
+nav{
+  background-color: #264653;
+}
+
+.hero-image {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("Assets/thegorge.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.hero-text{
+ color: white;
+ text-align: center;
+
+}
+.date{
+  color: white;
+}
+/* label color */
+.input-field label {
+  color: white;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: white;
+}
+.input-field input[type=date]:focus + label {
+  color: white;
+}
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+ /* label underline focus color */
+ .input-field input[type=date]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+  color: white;
+}
+
+
+#searchBtn{
+  color: white ;
+}
+
+.input-field {
+  color: white;
+}
+
+#map {
+  width: 400px;
+  height: 400px;
+}
+
+.flex-container {
+  display: flex;
+  margin: 50px;
+  border-radius: 12px;
+  flex-direction: row;
+}
+
+.flex-child {
+  flex: 1;
+  display: none;
+}  
+/* Event Detail Cards */
+.card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+}
+
+.date {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  color: #2A9D8F;
+}
+
+.event-image {
+  border-radius: 10px;
+  border: 3px white; 
+}
+.event-name {
+  font-size:2rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.event-name::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 2em;
+  background-color: black;
+  margin: 0.8em auto 0.5em;
+}
+
+.info {
+  margin: 0;
+  letter-spacing: 1.5px;
+  color: darkgray;
+}
+
+.location {
+  font-size: 20px;
+  color: darkgray;
+  text-align: center;
+} 
+
+.eventImage img {
+  max-width: 300px;
+  max-height: 300px;
+}
