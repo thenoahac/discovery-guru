@@ -6,12 +6,13 @@ const flexChild = document.getElementsByClassName("flex-child");
 const city = localStorage.getItem('address');
 const startDate = localStorage.getItem('startDate');
 const endDate = localStorage.getItem('endDate');
-// GEOCODER INITIALIZE
+
+// GEOCODER INITIALIZE //
 function initialize() {
   geocoder = new google.maps.Geocoder();
 
 }
-
+// UNHIDE CARD ELEMENTS //
 function showContent() {
   document.getElementById("cardMap").style.display ="flex";
   document.getElementById("card").style.display ="flex"
@@ -20,23 +21,24 @@ function showContent() {
   }
 }
 
-//onclick
+// onclick //
 function searchResults() {
-  //takes user city input as a value, geocodes - results[0] = latlon
+  //takes user city input as a value
   var address = document.getElementById('address').value;
   localStorage.setItem('address', address);
+  //takes date input as a value
   var startDate = document.getElementById('startDate').value;
   localStorage.setItem('startDate', startDate);
   var endDate = document.getElementById('endDate').value;
   localStorage.setItem('endDate', endDate);
-
+  // geocodes - results[0] = latlon
   geocoder.geocode( { 'address': address}, function(results, status) {
     console.log(results)
     var latlon = results[0].geometry.location.lat() + "," + results[0].geometry.location.lng()
     console.log(latlon)
     console.log(startDate)
     console.log(endDate)
-
+    // Once Geocode - launch ticketmaster api w/ parameters
     if (status == 'OK') {
       $.ajax({
         type:"GET",
@@ -44,12 +46,11 @@ function searchResults() {
         async:true,
         dataType: "json",
         success: function(json) {
+          // Successful API fetch will lead into a series of functions listed below
                     console.log(json);
                     console.log(json._embedded.events[0]._embedded.attractions[0].name);
                     const searchTerm = json._embedded.events[0]._embedded.attractions[0].name
                     console.log(searchTerm)
-                    //var e = document.getElementById("events");
-                    //e.innerHTML = json.page.totalElements + " events found.";
                     showEvents(json);
                     initMap(results, json);
                     eventDetails(json);
@@ -65,7 +66,7 @@ function searchResults() {
     }
   });
 }
-
+// showEvents appends TicketMaster JSON data and dynamically creates elements in html to display information
 function showEvents(json) {
   for(var i=0; i<1; i++) {
     $("#eventName1").append("<h4 class='center-align' style='color:#E9C46A;'>"+json._embedded.events[0].name+"</h4>");
@@ -75,7 +76,7 @@ function showEvents(json) {
   }
 }
 
-
+// initMap creates the Map and centers on to user latlon input + addMarker uses venue data to create a marker on Map
 function initMap(results, json) {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
@@ -95,6 +96,7 @@ function addMarker(map, event) {
   marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 }
 
+// eventDetails uses var searchTerm from Ticketmaster API JSON to search Wikipedia + YouTube articles and results
 function eventDetails(json) {
   var searchTerm = json._embedded.events[0]._embedded.attractions[0].name
   console.log(searchTerm)
