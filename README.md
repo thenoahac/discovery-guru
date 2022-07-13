@@ -10,8 +10,9 @@ I WANT to find and learn more about about musical events by searching any region
 SO THAT I can see when and where artists are playing, as well as seeing related information about them displayed directly alongside them 
 ```
 
-## Deployed Application
-(https://files.slack.com/files-pri/T03ESPMJV34-F03P7GYG2DU/image.png)
+## Deployed Application https://thenoahac.github.io/discovery-guru/
+![8c667271f98de91c9b9173b07f8f3ce5](https://user-images.githubusercontent.com/107082980/178828031-e21eb191-e087-4221-bfe0-0d5c9012c19c.jpg)
+
 
 ## Technology Utilized
 We used Materialize as our CSS Framework.
